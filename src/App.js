@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
+import Search from "./Search";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+      <Search defaultCity="Mashhad" />
+      <footer className="text-white text-center">
+        This project was coded by Somayyeh Seyedi and it is open-sourced on{" "}
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/Somayyeh94/weather-react-project"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
         >
-          Learn React
+          {" "}
+          GitHub
         </a>
-      </header>
+      </footer>
     </div>
   );
 }

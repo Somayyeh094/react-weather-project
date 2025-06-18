@@ -1,0 +1,118 @@
+:root {
+    --background_color: rgba(255, 255, 255, 0.07);
+  }
+  
+  .Search {
+    margin: 20px auto;
+    width: 60%;
+  }
+  .selection{
+    margin-right:0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .unit-selection {
+    margin-bottom: 15px ;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 5px;
+    
+  }
+  option {
+    background-color: #4e498a;
+    color: white;
+  }
+  
+  .form-search {
+    width: 40%;
+    background-color: var(--background_color);
+  }
+  .unit-select, select{
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  input::placeholder {
+    color: white;
+  }
+  input{
+    color:white;
+    
+  }
+  .form-submit {
+    width: 20%;
+    background-color: var(--background_color);
+    color: white;
+  }
+  .location{
+    font-size: 20px;
+  
+  }
+  .weather-data {
+    background-color: var(--background_color);
+  }
+  .weather-data p{
+    font-size: 16px;
+  }
+  .current-text {
+    padding: 0;
+    margin: 0;
+  }
+  .temperature-value {
+    font-size: 76px;
+    line-height: 62px;
+    font-weight: 600;
+  }
+  .temperaure-unit {
+    font-size: 46px;
+    position: relative;
+    bottom: 20px;
+  }
+  .current-icon {
+    position: relative;
+    bottom: 15px;
+  }
+  @media (max-width: 763px) {
+    .Search {
+      width: 90%;
+    }
+    .form-search {
+      width: 55%;
+    }
+    .form-submit {
+      width: 25%;
+    }
+    .location{
+      font-size: 14px;}
+      .location img{
+        width: 15px;
+      }
+    .weather-data p{
+      font-size: 10px;
+    }
+    .temperature-value {
+      font-size: 46px;
+      line-height: 42px;
+      font-weight: 400;
+    }
+    .temperaure-unit {
+      font-size: 20px;
+      position: relative;
+      bottom: 20px;
+    }
+    .current-condition {
+      font-size: 12px;
+      position: relative;
+      bottom: 10px;
+    }
+    .current-icon {
+      position: relative;
+      bottom: 5px;
+      width: 20%;
+    }
+  .weather-properties{
+    font-size: 12px;
+  }
+  }
+  
