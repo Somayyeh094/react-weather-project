@@ -4,7 +4,7 @@ import logo from "./pin-48.svg";
 import axios from "axios";
 import CorrectedTime from "./CorrectedTime";
 import WeatherIcon from "./WeatherIcon";
-
+import Forecast from "./Forecast"
 export default function Search({ defaultCity }) {
   let [city, setCity] = useState(defaultCity);
   let [weather, setWeather] = useState({ ready: false });
@@ -13,7 +13,7 @@ export default function Search({ defaultCity }) {
     setUnit(event.target.value);
   }
   function getWeatherData(response) {
-    console.log(response.data);
+   
     setWeather({
       ready: true,
       temperature: Math.round(response.data.temperature.current),
@@ -119,6 +119,9 @@ export default function Search({ defaultCity }) {
               </div>
             </div>
           </div>
+        </div>
+        <div className="forecast">
+          <Forecast city={city}/>
         </div>
       </div>
     );
