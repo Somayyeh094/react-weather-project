@@ -54,13 +54,21 @@ export default function Forecast(props) {
                   <div className="daily-temperature">
                     <div className="daily-temperature-max ">
                       {props.unit === "fahrenheit"
-                        ? (Math.round(dayforecast.temperature.maximum) * 9) /
-                            5 +
-                          32
+                        ? Math.round(
+                            (dayforecast.temperature.maximum * 9) / 5 + 32
+                          )
                         : Math.round(dayforecast.temperature.maximum)}
                       °
                     </div>
-                    <div className="daily-temperature-min">12°</div>
+                    <div className="daily-temperature-min">
+                      {" "}
+                      {props.unit === "fahrenheit"
+                        ? Math.round(
+                            (dayforecast.temperature.minimum * 9) / 5 + 32
+                          )
+                        : Math.round(dayforecast.temperature.minimum)}
+                      °
+                    </div>
                   </div>
                 </div>
               </div>

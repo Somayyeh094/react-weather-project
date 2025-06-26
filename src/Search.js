@@ -121,7 +121,7 @@ export default function Search({ defaultCity }) {
           </div>
         </div>
         <div className="forecast">
-          <Forecast city={city} tempUint={ unit} />
+          <Forecast city={city} unit={unit} setUnit={setUnit} />
         </div>
       </div>
     );
