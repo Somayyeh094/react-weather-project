@@ -77,7 +77,7 @@ export default function Search({ defaultCity }) {
           </div>
           <div className="current-data d-flex justify-content-center">
             <div className="current-icon  ">
-              <WeatherIcon code={weather.icon} />
+              <WeatherIcon code={weather.icon} size={100} />
             </div>
             <div className="current-temperature ps-3">
               <span className="temperature-value">
@@ -121,7 +121,7 @@ export default function Search({ defaultCity }) {
           </div>
         </div>
         <div className="forecast">
-          <Forecast city={city}/>
+          <Forecast city={city} tempUint={ unit} />
         </div>
       </div>
     );

@@ -2,6 +2,28 @@
 .daily-forecast{
     color: white;
     background-color: rgba(255, 255, 255, 0.07);
-    margin: 20px 0;
     padding: 0 10px;
+}
+.grid{
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap:10px}
+
+    .daily-temperature-max{
+        color:rgb(156, 156, 248);
+       }
+
+   .daily-temperature-min{
+    color:rgb(206, 206, 248);
+   }
+
+.daily-icon{
+    margin: 10 auto;
+}
+@media(max-width:960px){
+    .grid{
+        grid-template-columns: repeat(3,1fr);
+        grid-gap:5px  
+    }
 }

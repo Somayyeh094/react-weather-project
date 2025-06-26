@@ -1,6 +1,6 @@
 import ReactAnimatedWeather from "react-animated-weather";
 import { useState } from "react";
-export default function WeatherIcon({ code }) {
+export default function WeatherIcon(props) {
   const [width, setWidth] = useState(window.innerWidth);
 
   const codeMapping = {
@@ -32,18 +32,18 @@ export default function WeatherIcon({ code }) {
     if (width <= 763) {
       return (
         <ReactAnimatedWeather
-          icon={codeMapping[code]}
+          icon={codeMapping[props.code]}
           color="#ECB62F"
-          size={50}
+          size={40}
           animate={true}
         />
       );
     } else {
       return (
         <ReactAnimatedWeather
-          icon={codeMapping[code]}
+          icon={codeMapping[props.code]}
           color="#ECB62F"
-          size={100}
+          size={props.size}
           animate={true}
         />
       );

@@ -108,7 +108,7 @@
     }
     .current-icon {
       position: relative;
-      bottom: 5px;
+      bottom: 1px;
       width: 20%;
     }
   .weather-properties{
