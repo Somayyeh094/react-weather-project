@@ -54,6 +54,7 @@
   }
   .weather-data {
     background-color: var(--background_color);
+   
   }
   .weather-data p{
     font-size: 16px;

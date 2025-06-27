@@ -2,7 +2,7 @@ import ReactAnimatedWeather from "react-animated-weather";
 import { useState } from "react";
 export default function WeatherIcon(props) {
   const [width, setWidth] = useState(window.innerWidth);
-
+  
   const codeMapping = {
     "clear-sky-night": "CLEAR_NIGHT",
     "few-clouds-night": "PARTLY_CLOUDY_NIGHT",
@@ -23,30 +23,32 @@ export default function WeatherIcon(props) {
     "snow-day": "SNOW",
     "mist-day": "FOG",
   };
-
+ 
+ 
   function handleResize() {
     setWidth(window.innerWidth);
   }
   window.addEventListener("resize", handleResize);
- 
-    if (width <= 763) {
-      return (
-        <ReactAnimatedWeather
-          icon={codeMapping[props.code]}
-          color="#ECB62F"
-          size={40}
-          animate={true}
-        />
-      );
-    } else {
-      return (
-        <ReactAnimatedWeather
-          icon={codeMapping[props.code]}
-          color="#ECB62F"
-          size={props.size}
-          animate={true}
-        />
-      );
-    }
-  
+
+  if (width <= 763) {
+    return (
+      <ReactAnimatedWeather
+        icon={codeMapping[props.code]}
+        color={codeMapping[props.code].includes("CLEAR") ? "#ECB62F" : "lightcyan"}
+        size={40}
+        animate={true}
+      />
+    );
+  } else {
+    return (
+      <ReactAnimatedWeather
+        icon={codeMapping[props.code]}
+        color={
+          codeMapping[props.code].includes("CLEAR") ? "#ECB62F" : "lightcyan"
+        }
+        size={props.size}
+        animate={true}
+      />
+    );
+  }
 }
