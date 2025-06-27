@@ -24,7 +24,8 @@ A responsive weather application built with React, using the SheCodes Weather AP
 - **Deployment**: Netlify
 
 ## Screenshot 📱
-![Weather App Screenshot](https://via.placeholder.com/800x500/2D3748/FFFFFF?text=React+Weather+App)  
+[![Screenshot-weatherdemo](https://github.com/user-attachments/assets/155bacd5-0d79-4c9b-8420-1e345cfeb443)](https://react-weather-somayyeh.netlify.app/)
+ 
 ## Credits 🙌  
 - Weather data provided by [SheCodes Weather API](https://www.shecodes.io/learn/apis)  
 - Weather icons from [react-animated-weather](https://divyanshu013.github.io/react-animated-weather/)  
