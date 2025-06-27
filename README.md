@@ -28,5 +28,6 @@ A responsive weather application built with React, using the SheCodes Weather AP
  
 ## Credits 🙌  
 - Weather data provided by [SheCodes Weather API](https://www.shecodes.io/learn/apis)  
-- Weather icons from [react-animated-weather](https://divyanshu013.github.io/react-animated-weather/)  
+- Weather icons from [react-animated-weather](https://divyanshu013.github.io/react-animated-weather/)
+- Spinner from [react-spinners](https://www.npmjs.com/package/react-spinners)
 - Built as part of the [SheCodes Workshop](https://www.shecodes.io/)  
