@@ -9,8 +9,24 @@ export default function CorrectedTime({ current }) {
     "Friday",
     "Saturday",
   ];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
   let day = days[current.getDay()];
   let hours = current.getHours();
+  let date = current.getDate();
+  let month = months[current.getMonth()];
   if (hours < 10) {
     hours = `0${hours}`;
   }
@@ -20,7 +36,7 @@ export default function CorrectedTime({ current }) {
   }
   return (
     <p>
-      {day}, {hours}:{minutes}
+      {day}, {date}{" "}{month}, {hours}:{minutes}
     </p>
   );
 }

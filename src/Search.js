@@ -8,12 +8,17 @@ import Forecast from "./Forecast"
 export default function Search({ defaultCity }) {
   let [city, setCity] = useState(defaultCity);
   let [weather, setWeather] = useState({ ready: false });
+  let [forecast, setForecast] = useState(null);
   let [unit, setUnit] = useState("celsius");
   function showUnit(event) {
     setUnit(event.target.value);
   }
+  function getWeatherDataForecast(response) {
+    console.log(response.data);
+    setForecast(response.data.daily);
+  }
   function getWeatherData(response) {
-   
+    
     setWeather({
       ready: true,
       temperature: Math.round(response.data.temperature.current),
@@ -33,6 +38,11 @@ export default function Search({ defaultCity }) {
   function getApi() {
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=71c9o8ef0370bd39a326b41301fb04bt`;
     axios.get(apiUrl).then(getWeatherData);
+    axios
+      .get(
+        `https://api.shecodes.io/weather/v1/forecast?query=${city}}&key=71c9o8ef0370bd39a326b41301fb04bt`
+      )
+      .then(getWeatherDataForecast);
   }
   function handleSubmit(event) {
     event.preventDefault();
@@ -121,7 +131,7 @@ export default function Search({ defaultCity }) {
           </div>
         </div>
         <div className="forecast">
-          <Forecast city={city} unit={unit} setUnit={setUnit} />
+          <Forecast forecast={forecast}  unit={unit} />
         </div>
       </div>
     );
