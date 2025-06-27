@@ -5,6 +5,7 @@ import axios from "axios";
 import CorrectedTime from "./CorrectedTime";
 import WeatherIcon from "./WeatherIcon";
 import Forecast from "./Forecast"
+import { PuffLoader } from "react-spinners";
 export default function Search({ defaultCity }) {
   let [city, setCity] = useState(defaultCity);
   let [weather, setWeather] = useState({ ready: false });
@@ -138,9 +139,15 @@ export default function Search({ defaultCity }) {
   } else {
     getApi();
     return (
-      <h3 className="text-white text-center mt-5">
-        Loading Weather Application...
-      </h3>
+      <div className="loading d-flex justify-content-center">
+        <PuffLoader
+          color={"white"}
+          loading={true}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      </div>
     );
   }
 }

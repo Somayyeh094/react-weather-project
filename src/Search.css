@@ -77,6 +77,7 @@
     position: relative;
     bottom: 15px;
   }
+  
   @media (max-width: 763px) {
     .Search {
       width: 90%;
