@@ -15,7 +15,6 @@ export default function Search({ defaultCity }) {
     setUnit(event.target.value);
   }
   function getWeatherDataForecast(response) {
-    console.log(response.data);
     setForecast(response.data.daily);
   }
   function getWeatherData(response) {
@@ -36,6 +35,31 @@ export default function Search({ defaultCity }) {
       time: new Date(response.data.time * 1000),
     });
   }
+
+  function errors(error) {
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+      alert(` "${city}" No Found `);
+    } else if (error.request) {
+      // The request was made but no response was received
+      // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+      // http.ClientRequest in node.js
+      alert("Please try it later...");
+      console.log(error.request);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.log("Error", error.message);
+      alert("Please try again!");
+    }
+    console.log(error.config);
+  }
+
+
+
   function getApi() {
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=71c9o8ef0370bd39a326b41301fb04bt`;
     axios.get(apiUrl).then(getWeatherData);
@@ -43,7 +67,8 @@ export default function Search({ defaultCity }) {
       .get(
         `https://api.shecodes.io/weather/v1/forecast?query=${city}}&key=71c9o8ef0370bd39a326b41301fb04bt`
       )
-      .then(getWeatherDataForecast);
+      .then(getWeatherDataForecast)
+      .catch(errors);;
   }
   function handleSubmit(event) {
     event.preventDefault();
